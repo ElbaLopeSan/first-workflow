@@ -8,8 +8,12 @@
 #### Para Python: settear Python y ejecutar algún fichero de Python que muestre algo por consola
 
 ## Dia 2.
-### Ejercicio 2:
+### Ejercicio 1:
 
 #### Crear un workflow que muestre algo por consola y que se ejecute: 
 #### - Al hacer push en cuelquier rama menos en main
 #### - Cada 2 minutos empezando en el min 5 de cada hora
+
+#### Ejercicio 2:
+
+
