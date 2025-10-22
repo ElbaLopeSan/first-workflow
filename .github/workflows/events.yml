@@ -12,7 +12,7 @@ on:
     branches-ignore:
       - main   # Se ejecuta en push de cualquier rama excepto main
   schedule:
-    - cron: "5-59/2 * * * *"  # Cada 2 minutos empezando en el min 5 (UTC)
+    - cron: "5/2 * * * *"  # Cada 2 minutos empezando en el min 5 (UTC)
 
 jobs:
   say-hello:
