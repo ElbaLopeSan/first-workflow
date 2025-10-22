@@ -7,6 +7,10 @@ jobs:
     steps: 
       - name: "bla bla bla"
         run: |
-          "echo ${{ github.ref }}"
+          echo "${{ github.ref }}"
+          echo "ref_name: ${{ github.ref_name }}"
+          echo "actor: ${{ github.actor }}"
+          echo "repo: ${{ github.repository }}"
+          echo "sha: ${{ github.sha }}"
           
           
