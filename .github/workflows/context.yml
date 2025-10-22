@@ -1,0 +1,12 @@
+name: "context"
+on:
+  push:
+jobs:
+  log-github-data:
+    runs-on: "ubuntu-latest"
+    steps: 
+      - name: "bla bla bla"
+        run: |
+          "echo ${{ github.ref }}"
+          
+          
