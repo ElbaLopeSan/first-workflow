@@ -1,0 +1,35 @@
+# Crear un repositorio y un workflow que al hacer push muestre la hora y:
+# Para Node: muestre las versiones de node y npm, instale el paquete "cowsay" y muestre una vaca por consola
+# Para Python: settear Python y ejecutar algún fichero de Python que muestre algo por consola
+
+name: first-workflow (Node)
+
+on:
+  push:
+
+jobs:
+  show-time-and-cowsay:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Mostrar hora (UTC) del runner
+        run: |
+          echo "Hora (UTC): $(date -u +"%Y-%m-%d %H:%M:%S")"
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Mostrar versiones de Node y npm
+        run: |
+          node -v
+          npm -v
+
+      - name: Instalar cowsay y mostrar una vaca
+        run: |
+          npm install -g cowsay
+          cowsay "¡Hola Elba! Tu primer workflow funciona 🐮"

@@ -1,0 +1,24 @@
+# Ejercicio 2:
+
+# Crear un workflow que muestre algo por consola y que se ejecute: 
+# - Al hacer push en cuelquier rama menos en main
+# - Cada 2 minutos empezando en el min 5 de cada hora
+
+
+name: workflow con triggers
+
+on:
+  push:
+    branches-ignore:
+      - main   # Se ejecuta en push de cualquier rama excepto main
+  schedule:
+    - cron: "5-59/2 * * * *"  # Cada 2 minutos empezando en el min 5 (UTC)
+
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Mensaje por consola
+        run: |
+          echo "Holita Vecinito!"
+          echo "Hora (UTC): $(date -u +"%Y-%m-%d %H:%M:%S")"
