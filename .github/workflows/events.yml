@@ -22,3 +22,20 @@ jobs:
         run: |
           echo "Holita Vecinito!"
           echo "Hora (UTC): $(date -u +"%Y-%m-%d %H:%M:%S")"
+
+
+# name: "Events"
+# on:
+#   push:
+#     branches:
+#       - main
+#   schedule:
+#     - cron: "* * * * *"
+#   workflow_dispatch:
+
+# jobs:
+#   log-greeting:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: "show greeting"
+#         run: "echo 'holaaa'"         

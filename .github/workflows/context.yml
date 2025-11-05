@@ -1,16 +1,22 @@
 name: "context"
-on:
-  push:
+on: push
 jobs:
   log-github-data:
-    runs-on: "ubuntu-latest"
-    steps: 
-      - name: "bla bla bla"
-        run: |
-          echo "${{ github.ref }}"
-          echo "ref_name: ${{ github.ref_name }}"
-          echo "actor: ${{ github.actor }}"
-          echo "repo: ${{ github.repository }}"
-          echo "sha: ${{ github.sha }}"
-          
-          
+    runs-on: ubuntu-latest
+    steps:
+      - name: "log github ref"
+        run: "echo ${{ github.ref }}"
+      - name: "log github ref name"
+        run: "echo ${{ github.ref_name }}"
+      - name: "log github actor"
+        run: "echo ${{ github.actor }}"
+  log-node-version:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [20, 21, 22]
+    steps:
+      - uses: actions/setup-node@v6
+        with:
+          node-version: ${{ matrix.node }}
+      - run: "node --version"
